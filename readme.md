@@ -6,10 +6,9 @@ This project is a simple web application that can convert between different unit
 ## 🔍 Features
 
 - ✅ Convert between different units of measurement, including:
-
-* Length: Millimeter, Centimeter, Meter, Kilometer, Inch, Foot, Yard, Mile.
-* Weight: Milligram, Gram, Kilogram, Ounce, Pound.
-* Temperature: Celsius, Fahrenheit, Kelvin.
+    * Length: Millimeter, Centimeter, Meter, Kilometer, Inch, Foot, Yard, Mile.
+    * Weight: Milligram, Gram, Kilogram, Ounce, Pound.
+    * Temperature: Celsius, Fahrenheit, Kelvin.
 
 ## 🛠️ Technical Details
 
