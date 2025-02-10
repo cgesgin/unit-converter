@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: left;
+            border: 2px solid black;
+        }
+        h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .tabs {
+            display: flex;
+            gap: 15px;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        .tab {
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
+        }
+        .active {
+            font-weight: bold;
+            text-decoration: underline;
+            color: blue;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        button {
+            background: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Unit Converter</h2>
+        <div class="tabs">
+            <a href="/" class="tab active">Length</a>
+            <a href="/weight" class="tab">Weight</a>
+            <a href="/temperature" class="tab">Temperature</a>
+        </div>
+        <form action="#" th:action="@{/}" method="post" th:object="${length}">
+            <label for="value">Enter the length to convert</label>
+            <input type="number" id="value" th:field="*{value}" step="0.01" min="0" required />
+            <div th:if="${#fields.hasErrors('value')}" th:errors="*{value}"></div>
+            <label for="fromUnit">Unit to Convert from</label>
+            <select id="fromUnit" th:field="*{fromUnit}">
+                <option th:each="unit : ${units}" th:value="${unit}" th:text="${unit}"></option>
+            </select>
+            
+            <label for="toUnit">Unit to Convert to</label>
+            <select id="toUnit" th:field="*{toUnit}">
+                <option th:each="unit : ${units}" th:value="${unit}" th:text="${unit}"></option>
+            </select>
+            
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+</body>
+</html>

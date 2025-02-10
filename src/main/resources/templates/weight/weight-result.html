@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: left;
+            border: 2px solid black;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 15px;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .tab {
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
+        }
+
+        .active {
+            font-weight: bold;
+            text-decoration: underline;
+            color: blue;
+        }
+
+        .result {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .conversion {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+            background: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Unit Converter</h2>
+        <div class="tabs">
+            <a href="/" class="tab">Length</a>
+            <a href="/weight" class="tab active">Weight</a>
+            <a href="/temperature" class="tab">Temperature</a>
+        </div>
+        <div class="result">Result of your calculation</div>
+        <div class="conversion">
+            <div>
+                <p th:text="${oldvalue}"></p>
+                <p th:text="${result.fromUnit}"></p>
+                =<p th:text="${result.value}"></p>
+                <p th:text="${result.toUnit}"></p>
+            </div>
+        </div>
+        <form th:action="@{/weight}" method="get">
+            <button type="submit">Reset</button>
+        </form>        
+    </div>
+</body>
+</html>
