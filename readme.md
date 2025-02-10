@@ -22,19 +22,19 @@ To get started with the project, follow these steps:
 
 - Clone the repository:
 
-    git clone https://github.com/your-repo/unit-converter.git
+        git clone https://github.com/your-repo/unit-converter.git
 
 - Navigate to the project directory:
 
-    cd unit-converter
+        cd unit-converter
 
 - Build the project:
 
-    mvn clean install
+        mvn clean install
 
 - Run the application:
 
-    mvn exec:java
+        mvn exec:java
 
 - Visit the application in your browser:
 
