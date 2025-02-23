@@ -1,7 +1,5 @@
 ## 🎯 Overview
-This project is a simple web application that can convert between different units of measurement.For more information and details on how to contribute, you can check this link:
-
-    https://roadmap.sh/projects/unit-converter
+Solution to the roadmap.sh project https://roadmap.sh/projects/unit-converter
 
 ## 🔍 Features
 
